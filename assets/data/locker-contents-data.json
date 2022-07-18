@@ -1,0 +1,54 @@
+{
+	"locker-contents-data": [
+		{
+			"image": "https://media.istockphoto.com/photos/scrap-gold-collection-picture-id177431217",
+			"id": 1,
+			"item-name": "Jewelleries",
+			"qty": 5,
+			"quality": "22 carats",
+			"weight": "30 grams",
+			"gross-weight": "98 grams",
+			"net-weight": "4g / 4g"
+		},
+		{
+			"image": null,
+			"id": 2,
+			"item-name": "Necklace",
+			"qty": 5,
+			"quality": "22 carats",
+			"weight": "30 grams",
+			"gross-weight": "75 grams",
+			"net-weight": "4g / 4g"
+		},
+		{
+			"image": null,
+			"id": 3,
+			"item-name": "Bracelets",
+			"qty": 5,
+			"quality": "22 carats",
+			"weight": "30 grams",
+			"gross-weight": "36 grams",
+			"net-weight": "4g / 4g"
+		},
+		{
+			"image": null,
+			"id": 4,
+			"item-name": "Necklace",
+			"qty": 5,
+			"quality": "22 carats",
+			"weight": "154 grams",
+			"gross-weight": "49 grams",
+			"net-weight": "9g / 4g"
+		},
+		{
+			"image": null,
+			"id": 5,
+			"item-name": "Locket/Bangles",
+			"qty": 5,
+			"quality": "24 carats",
+			"weight": "36 grams",
+			"gross-weight": "96 grams",
+			"net-weight": "4g / 4g"
+		}
+	]
+}

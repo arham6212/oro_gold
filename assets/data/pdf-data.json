@@ -1,0 +1,28 @@
+{
+  "pdf-data": [
+    {
+      "language": "English",
+      "url": "https://www.orimi.com/pdf-test.pdf"
+    },
+    {
+      "language": "Tamil",
+      "url": "https://www.clickdimensions.com/links/TestPDFfile.pdf"
+    },
+    {
+      "language": "Telugu",
+      "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+    },
+    {
+      "language": "Kannada",
+      "url": "https://www.ets.org/Media/Tests/GRE/pdf/gre_research_validity_data.pdf"
+    },
+    {
+      "language": "Marathi",
+      "url": "https://s29.q4cdn.com/816090369/files/doc_downloads/test.pdf"
+    },
+    {
+      "language": "Hindi",
+      "url": "http://www.africau.edu/images/default/sample.pdf"
+    }
+  ]
+}
