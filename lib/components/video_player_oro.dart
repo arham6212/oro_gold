@@ -4,38 +4,27 @@ import 'package:video_player/video_player.dart';
 import '../utils/tools.dart';
 
 class VideoPlayerOro extends StatefulWidget {
-  const VideoPlayerOro({Key? key}) : super(key: key);
+  final VideoPlayerController videoPlayerController;
+
+  const VideoPlayerOro({Key? key, required this.videoPlayerController}) : super(key: key);
 
   @override
   State<VideoPlayerOro> createState() => _VideoPlayerOroState();
 }
 
 class _VideoPlayerOroState extends State<VideoPlayerOro> {
-  late VideoPlayerController _videoPlayerController;
-  bool isShowPlaying = false;
+   bool isShowPlaying = false;
 
 
-  @override
-  void dispose() {
-    super.dispose();
-    _videoPlayerController.dispose();
-  }
-  @override
-  void initState() {
-    super.initState();
-    _videoPlayerController =
-        VideoPlayerController.asset('assets/videos/sample.mp4')
-          ..initialize();
-  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         setState(() {
-          _videoPlayerController.value.isPlaying
-              ? _videoPlayerController.pause()
-              : _videoPlayerController.play();
+          widget.videoPlayerController.value.isPlaying
+              ? widget.videoPlayerController.pause()
+              : widget.videoPlayerController.play();
         });
       },
       child: SizedBox(
@@ -44,8 +33,8 @@ class _VideoPlayerOroState extends State<VideoPlayerOro> {
         width: double.infinity,
         child: Stack(
           children: [
-            VideoPlayer(_videoPlayerController),
-            _videoPlayerController.value.isPlaying
+            VideoPlayer(widget.videoPlayerController),
+            widget.videoPlayerController.value.isPlaying
                 ? const Offstage()
                 : Center(
                     child: Icon(

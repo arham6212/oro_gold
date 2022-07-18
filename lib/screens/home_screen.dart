@@ -19,7 +19,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-
+  late VideoPlayerController videoPlayerController;
+@override
+  initState(){
+  super.initState();
+  videoPlayerController =
+  VideoPlayerController.asset('assets/videos/sample.mp4')
+    ..initialize();
+}
+@override
+  void dispose() {
+    videoPlayerController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           InkWell(
             onTap: () async {
+              videoPlayerController.pause();
               showDialog(
                 context: context,
                 builder: (_) => PdfAlertDialog(),
@@ -106,6 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 16),
                         CommonButton(
                           callback: () {
+                            videoPlayerController.pause();
                             Navigator.of(context).pushNamed('locker');
                           },
                           width: double.infinity,
@@ -148,15 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: styleForCommonHeading(context),
                   ),
                   const VerticalSpacing(),
-                  Container(
-                    color: Colors.white,
-                    child: VideoPlayerOro(),
-                    // child: VideoPlayer(_videoPlayerController),
-                    // child:  Icon(
-                    //   Icons.play_arrow_outlined,
-                    //   size: Tools.isTablet(context)?69:45,
-                    // ),
-                  ),
+                  VideoPlayerOro(videoPlayerController: videoPlayerController,),
                   const VerticalSpacing(height: 24),
                   Text('Where are your Locker Items stored?',
                       style: styleForCommonHeading(context)),

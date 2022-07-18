@@ -34,23 +34,31 @@ class PdfAlertDialog extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(
-                  child: FutureBuilder(
-                    future: Tools.downloadFile(
-                        state is LanguageSuccessfullyChangedState? state.pdfData.url:(state is PdfInitialState? 'https://www.orimi.com/pdf-test.pdf':'')),
-                    builder: (context, AsyncSnapshot<File> snapshot) =>
-                        snapshot.connectionState == ConnectionState.waiting
-                            ? const Center(
-                                child: CircularProgressIndicator(),
-                              )
-                            : snapshot.hasData
-                                ? PDFView(
-                                    filePath: snapshot.data?.path,
-                                    autoSpacing: false,
-                                    enableSwipe: true,
-                                    pageSnap: true,
-                                    pageFling: false,
-                                  )
-                                : const Offstage(),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 20
+                      ),
+                    ),
+                    child: FutureBuilder(
+                      future: Tools.downloadFile(
+                          state is LanguageSuccessfullyChangedState? state.pdfData.url:(state is PdfInitialState? 'https://www.orimi.com/pdf-test.pdf':'')),
+                      builder: (context, AsyncSnapshot<File> snapshot) =>
+                          snapshot.connectionState == ConnectionState.waiting
+                              ? const Center(
+                                  child: CircularProgressIndicator(),
+                                )
+                              : snapshot.hasData
+                                  ? PDFView(
+                                      filePath: snapshot.data?.path,
+                                      autoSpacing: false,
+                                      enableSwipe: true,
+                                      pageSnap: true,
+                                      pageFling: false,
+                                    )
+                                  : const Offstage(),
+                    ),
                   ),
                 ),
                 Padding(
